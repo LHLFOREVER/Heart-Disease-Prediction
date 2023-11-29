@@ -1,26 +1,7 @@
 # Heart-Disease-Prediction
 ![image](https://github.com/LHLFOREVER/Heart-Disease-Prediction/assets/97744180/b580dbdc-dfac-439e-bd27-66415961b434)
-# Introduction 
-Coronary heart disease has been the leading cause of death worldwide for decades; as we can see from figure 1, heart disease caused 614,348 deaths in 2014, 23.4% of the total deaths in America. CHD continues to kill more people than any other cause. 
-Risk factors for CHD include age, sex, family history, smoking, high blood pressure, high cholesterol, obesity, diabetes, chronic kidney disease, lack of exercise, lack of sleep, stress, an unhealthy diet, and alcohol use. 
-![image](https://github.com/LHLFOREVER/Heart-Disease-Prediction/assets/97744180/8ee8364f-987c-4fe5-a8fb-3cf402a6b41e)
-Figure 1
 
-The research question for this project is, “What techniques can we apply to mitigate the imbalanced dataset, and what machine learning models can give us a higher accuracy and F1 score for an imbalanced dataset?”.  By implementing over and undersampling and better-performing machine learning models, we can improve the accuracy of predicting coronary heart disease, potentially leading to a cheaper and earlier diagnosis. This can also give patients more accurate results when trying to find out whether they have CHD or not in the early stages, improving outcomes as a result. 
-
-In addition, this research can provide new insights for handling imbalanced datasets. Imbalanced datasets show up frequently in medical data, where the positive cases are vastly outnumbered by the negative cases. If our selected techniques show success here, they may be useful on similarly imbalanced datasets for other diseases.
-# Dataset 
-The dataset we are using is the NHANES data from 1999-2000 to 2015-2016. It has a total of 37,079 cases, with 1300 CHD-positive cases and 35,779 CHD-negative cases. Our dataset is highly imbalanced: We have significantly more CHD-negative cases than CHD-positive cases, and this will be one of the challenges we need to overcome. Some important features of our dataset include height, weight, blood pressure, BMI, and more. We have a total of 30 continuous variables and 6 categorical variables to predict coronary heart disease. 
-
-During the data preprocessing phase we are going to split the data into a training set, a testing set, and a validation set. The training set will include 25,955 total cases which is about 70% of the entire dataset, the testing set is going to include 5,561 cases which is about 15% of the overall dataset and the validation set is going to include 5,561 cases which is about 15% of the overall dataset as well.
-
-# Novelty 
-The original research applies LASSO regression for feature selection and several techniques for model building, including a shallow convolutional neural network and SVM. Our contributions to the research paper include ridge regression for feature selection and k-NN and Vote for model building. Our contributions produce an improvement in the accuracy of the original research paper, showing our techniques are capable of producing valid results.  
-
-
-Ridge regression is a method of feature selection that excels on data with high multicollinearity. Ridge regression performs the L2 regularization, which adds a penalty term equal to the square of the magnitude of the coefficients. This is in contrast to LASSO regression, which performs L1 regularization; in L1 regularization, the penalty term is equal to the magnitude of the coefficients.  
-
-
-The k-nearest neighbors algorithm is widely used in machine learning classification and regression tasks. We first test the optimal number of neighbors on our validation set and find this to be k=4. With this amount of neighbors, the validation set produces an accuracy of 98.92%. We then use this amount of neighbors on the testing set, and get an accuracy of 95.83%. 
-
-we apply the vote machine learning method. Vote trains the model based on a combination of multiple machine learning models to achieve a high accuracy. Specifically, we combine SVM, k-NN, and Decision Trees. We already performed validation for k-NN, so we now perform validation on SVM. The original paper had already implemented SVM so we perform validation on this implementation, testing different C values, gammas, and kernels. Through validation we find the optimal hyperparameters to be C=0.01, gamma=0.1, and a poly kernel. This produces a validation accuracy of 87% and a test accuracy of 88%, an improvement over the original paper. Next, we apply validation on decision trees. The hyperparameters we check are the criterion (either gini or entropy) and the max depth (either 1,000, 10,000, 100,000, 1,000,000, or 2,000,000). The optimal criterion is entropy and the optimal max depth is 1,000,000. When we run vote on these models, we produce a validation accuracy of 99% and a test accuracy of 95.88%, very high on this dataset.  
+Dataset: CardiacPrediction.xlsx
+Parent Paper: parentpaper.pdf
+Parent Paper Code: Source Code from parent paper.ipynb
+Our Code: CHD-FinalImplementation.ipynb
